@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: 'bold',
     marginBottom: 40,
-    color: '#5D76A9',
+    color: 'green',
   },
   input: {
     width: '100%',
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
   button: {
     width: '100%',
     height: 50,
-    backgroundColor: '#5D76A9',
+    backgroundColor: 'green',
     borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
@@ -121,12 +121,12 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   forgotPassword: {
-    color: '#5D76A9',
+    color: 'green',
     marginBottom: 20,
     textDecorationLine:'underline',
   },
   signupLink: {
-    color: '#5D76A9',
+    color: 'green',
     fontWeight: 'bold',
   },
 });

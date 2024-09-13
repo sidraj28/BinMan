@@ -25,7 +25,7 @@ const HomeScreen = () => {
         style={styles.button} 
         onPress={() => navigation.navigate('Services')}
       >
-        <Text style={styles.buttonText}>OUR SERVICES</Text>
+        <Text style={styles.buttonText}>SCAN YOUR WASTE</Text>
       </TouchableOpacity>
 
       {/* Recycling Bins Image (You can use any static image here) */}
@@ -49,19 +49,22 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   title: {
-    fontSize: 32,
+    fontSize: 36,
     fontWeight: 'bold',
     color: '#2E7D32',
-    marginTop: 20,
+    marginTop: 40,
+    marginBottom: 40,
   },
   subtitle: {
-    fontSize: 18,
+    fontSize: 22,
+    fontWeight: 'bold',
     textAlign: 'center',
     color: '#000',
-    marginTop: 10,
+    marginTop: 0,
+    marginBottom: 30,
   },
   description: {
-    fontSize: 16,
+    fontSize: 18,
     textAlign: 'center',
     color: '#555',
     marginVertical: 20,
@@ -70,8 +73,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#2E7D32',
     paddingVertical: 10,
     paddingHorizontal: 40,
-    borderRadius: 5,
+    borderRadius: 50,
     marginVertical: 10,
+    marginTop: 20,
+    marginBottom: 40,
   },
   buttonText: {
     color: '#fff',

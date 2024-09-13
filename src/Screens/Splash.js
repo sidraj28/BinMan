@@ -21,9 +21,9 @@ resizeMode : 'center',
 />
 <Text style ={{
   fontSize:25,
-  color:'#5D76A9',
+  color:'green',
   fontWeight:'bold',
-}}>Bekar Ko Aakar</Text>
+}}>BINMAN</Text>
 </View>
 );
 };

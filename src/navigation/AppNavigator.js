@@ -36,7 +36,7 @@ const HomeTabs = () => {
             source={icons[route.name]}  
             style={[
               styles.icon,
-              { tintColor: focused ? '#5D76A9' : 'gray' },  
+              { tintColor: focused ? 'green' : 'grey' },  
             ]}
           />
         ),
@@ -119,7 +119,8 @@ const styles = StyleSheet.create({
     },
     iconText: {
       fontSize: 12,
-      color:'#5D76A9',
+      color:'green',
+      backgroundColor:'green',
     },
   icon:{
     width: 30,
