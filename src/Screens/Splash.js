@@ -11,7 +11,7 @@ setTimeout (() =>{
 },[]);
 return (
 <View style ={{flex:1, justifyContent : 'center' , alignItems : 'center', alignSelf:'center', color:'white'}}>
-<Image source ={require('../Images/BKA.jpg')}
+<Image source ={require('../Images/binmann.jpg')}
 style ={{
 width:200,
 height :200,
