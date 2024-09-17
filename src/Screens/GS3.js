@@ -5,7 +5,7 @@ export default function App({navigation}) {
   return (
     <View style={styles.container}>
       <Image
-        source={{ uri: 'https://placehold.co/375x812' }}
+        source={require('../Images/g3.png')}
         style={styles.backgroundImage}
       />
       <View style={styles.overlay} />

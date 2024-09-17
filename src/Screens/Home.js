@@ -31,7 +31,7 @@ const HomeScreen = () => {
       {/* Recycling Bins Image (You can use any static image here) */}
       <View style={styles.imageContainer}>
         <Image 
-          source={require('../Images/BKA.jpg')} // Path to your image
+          source={require('../Images/binmann.jpg')} // Path to your image
           style={styles.binsImage}
         />
       </View>

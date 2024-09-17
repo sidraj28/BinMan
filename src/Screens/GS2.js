@@ -4,7 +4,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, ImageBackg
 export default function JoinTheCycle({ navigation }) {
   return (
     <ImageBackground
-      source={{ uri: 'https://placehold.co/375x812' }}
+      source={require('../Images/g2.png')}
       style={styles.backgroundImage}
     >
       <View style={styles.overlay}>

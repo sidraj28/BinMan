@@ -23,7 +23,7 @@ resizeMode : 'center',
   fontSize:25,
   color:'green',
   fontWeight:'bold',
-}}>BINMAN</Text>
+}}></Text>
 </View>
 );
 };

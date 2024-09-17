@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Image, TextInput, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+
 const Vendors = () => {
   return (
     <View style={styles.container}>
@@ -10,6 +11,7 @@ const Vendors = () => {
           source ={require('../Images/bin.jpg')}
           style={styles.headerImage}
         />
+
         <View style={styles.overlay}>
           <Text style={styles.headerText}>What Do You Want Us To Collect Today?</Text>
         </View>
