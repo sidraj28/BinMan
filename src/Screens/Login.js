@@ -1,8 +1,6 @@
 // LoginScreen.js
 import React , {useState}  from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet , Image,  Alert, useColorScheme} from 'react-native';
-import { useTheme } from '../navigation/ThemeProvider';
-import auth from '@react-native-firebase/auth';
 import {getAuth , signInWithEmailAndPassword } from '@react-native-firebase/auth';
 
 

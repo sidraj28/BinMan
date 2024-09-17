@@ -16,6 +16,8 @@ import ChatBotScreen from '../Screens/ChatBotScreen';
 import GS1 from '../Screens/GS1';
 import GS2 from '../Screens/GS2';
 import GS3 from '../Screens/GS3';
+import Dustbins from '../Screens/Dustbins';
+import Vendors from "../Screens/Vendors";
 import { View, Text, StyleSheet, Image } from 'react-native';
 
 const Tab = createBottomTabNavigator();
@@ -121,6 +123,16 @@ export default function  AppNavigator () {
         options ={{headerShown  : false}}
         name = "ChatBotScreen"
         component = {ChatBotScreen}/>
+
+<Stack.Screen
+        options ={{headerShown  : false}}
+        name = "Vendors"
+        component = {Vendors}/>
+
+<Stack.Screen
+        options ={{headerShown  : false}}
+        name = "Dustbins"
+        component = {Dustbins}/>
   
         </Stack.Navigator>
       
