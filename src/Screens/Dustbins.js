@@ -1,11 +1,12 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, Image, TouchableOpacity, StyleSheet, Dimensions, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import MapView, { Marker } from 'react-native-maps';
 
 const App = () => {
   return (
     <View style={styles.container}>
-      {/* Map Background */}
+
       <Image 
         source={{ uri: 'https://placehold.co/300x600' }} 
         style={styles.mapBackground} 
@@ -39,30 +40,45 @@ const App = () => {
           <Icon name="map-marker" size={14} color="gray" />
           <Text style={styles.addressText}>123 Bundelkhand University, Jhansi, UP 284128</Text>
         </View>
+        <Image source ={require('../Images/home1.png')}
+style ={{
+width:200,
+height :100,
+resizeMode : 'contain',
+position:'static',
+top:20,
+bottom:0,
+}}
+/>
+
       </View>
 
-      {/* Footer Navigation */}
-      <View style={styles.footer}>
-        <TouchableOpacity style={styles.footerItem}>
-          <Icon name="home" size={24} color="white" />
-          <Text style={styles.footerText}>Home</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.footerItem}>
-          <Icon name="tablet-alt" size={24} color="white" />
-          <Text style={styles.footerText}>Devices</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.footerItem}>
-          <Icon name="concierge-bell" size={24} color="white" />
-          <Text style={styles.footerText}>Services</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.footerItem}>
-          <Icon name="phone" size={24} color="white" />
-          <Text style={styles.footerText}>Contact</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.footerItem}>
-          <Icon name="user" size={24} color="white" />
-          <Text style={styles.footerText}>Profile</Text>
-        </TouchableOpacity>
+{/* Bottom Dustbin Info */}
+<View style={styles.infoCard}>
+        <View style={styles.newTag}>
+          <Text style={styles.newTagText}>New</Text>
+        </View>
+        <Text style={styles.dustbinName}>SRM Public Dustbin</Text>
+        <View style={styles.status}>
+          <Text style={styles.statusText}>Open</Text>
+          <Text style={styles.dot}>•</Text>
+          <Text style={styles.statusText}>24*7</Text>
+        </View>
+        <View style={styles.address}>
+          <Icon name="map-marker" size={14} color="gray" />
+          <Text style={styles.addressText}>123 Bundelkhand University, Jhansi, UP 284128</Text>
+        </View>
+        <Image source ={require('../Images/home1.png')}
+style ={{
+width:200,
+height :100,
+resizeMode : 'contain',
+position:'static',
+top:20,
+bottom:0,
+}}
+/>
+
       </View>
     </View>
   );
@@ -115,10 +131,11 @@ const styles = StyleSheet.create({
   },
   infoCard: {
     position: 'absolute',
-    bottom: 0,
+    bottom: '5%',
     left: 0,
     width: '100%',
-    backgroundColor: 'white',
+    height: '30%',
+    backgroundColor: '#d1cdcd',
     padding: 15,
     borderRadius: 10,
     shadowColor: '#000',
@@ -141,6 +158,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginVertical: 5,
+    color: 'black',
   },
   status: {
     flexDirection: 'row',
@@ -160,27 +178,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   addressText: {
-    color: 'gray',
+    color: 'black',
     marginLeft: 5,
   },
-  footer: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    width: '100%',
-    backgroundColor: '#004d00',
-    padding: 10,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-  },
-  footerItem: {
-    alignItems: 'center',
-  },
-  footerText: {
-    color: 'white',
-    fontSize: 12,
-    marginTop: 2,
-  },
+  
 });
 
 export default App;

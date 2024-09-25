@@ -8,7 +8,7 @@ const Vendors = () => {
     <View style={styles.container}>
       <View style={styles.imageContainer}>
         <Image
-          source ={require('../Images/bin.jpg')}
+          source ={require('../Images/V1.png')}
           style={styles.headerImage}
         />
 

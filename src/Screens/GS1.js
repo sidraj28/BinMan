@@ -92,5 +92,7 @@ const styles = StyleSheet.create({
   arrowText: {
     color: 'white',
     fontSize: 24,
+    textAlign: 'center',
+    marginBottom: 10
   },
 });

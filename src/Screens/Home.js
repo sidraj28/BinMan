@@ -1,11 +1,14 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { WebView } from 'react-native-webview';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
 
   return (
+  
     <View style={styles.container}>
       {/* App Title */}
       <Text style={styles.title}>BINMAN</Text>
@@ -31,23 +34,33 @@ const HomeScreen = () => {
       {/* Recycling Bins Image (You can use any static image here) */}
       <View style={styles.imageContainer}>
         <Image 
-          source={require('../Images/binmann.jpg')} // Path to your image
+          source={require('../Images/home1.png')} // Path to your image
           style={styles.binsImage}
         />
       </View>
 
+      <Text style={styles.dash}>
+        ------------------------------------------
+      </Text>
+      <Text style={styles.subtitle2}>
+        Our Achievements
+      </Text>
+
+     
     </View>
+    
   );
 };
 
 // Styles for the components
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
     padding: 20,
     alignItems: 'center',
     backgroundColor: '#fff',
   },
+  
   title: {
     fontSize: 36,
     fontWeight: 'bold',
@@ -60,6 +73,22 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     color: '#000',
+    marginTop: 0,
+    marginBottom: 30,
+  },
+  dash: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#000',
+    marginTop: 0,
+    marginBottom: 20,
+  },
+  subtitle2: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#ff0000',
     marginTop: 0,
     marginBottom: 30,
   },

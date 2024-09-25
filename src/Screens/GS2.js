@@ -93,5 +93,6 @@ const styles = StyleSheet.create({
   arrowText: {
     color: 'white',
     fontSize: 24,
+    marginBottom: 10,
   },
 });

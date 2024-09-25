@@ -16,8 +16,11 @@ import ChatBotScreen from '../Screens/ChatBotScreen';
 import GS1 from '../Screens/GS1';
 import GS2 from '../Screens/GS2';
 import GS3 from '../Screens/GS3';
+import Toilets from "../Screens/Toilets";
 import Dustbins from '../Screens/Dustbins';
 import Vendors from "../Screens/Vendors";
+import ExchangePoint from "../Screens/ExchangePoint";
+
 import { View, Text, StyleSheet, Image } from 'react-native';
 
 const Tab = createBottomTabNavigator();
@@ -25,7 +28,7 @@ const Stack = createStackNavigator();
 
 const icons = {
   Home: require('../Images/home.png'),       
-  Devices: require('../Images/about.png'),     
+  Devices: require('../Images/Devices.png'),     
   Services: require('../Images/customer-service.png'), 
   Contact: require('../Images/telephone.png'),   
   Profile: require('../Images/developing.png'), 
@@ -131,8 +134,20 @@ export default function  AppNavigator () {
 
 <Stack.Screen
         options ={{headerShown  : false}}
+        name = "Toilets"
+        component = {Toilets}/>
+
+<Stack.Screen
+        options ={{headerShown  : false}}
         name = "Dustbins"
         component = {Dustbins}/>
+
+<Stack.Screen
+        options ={{headerShown  : false}}
+        name = "ExchangePoint"
+        component = {ExchangePoint}/>
+  
+
   
         </Stack.Navigator>
       

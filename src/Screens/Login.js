@@ -1,23 +1,39 @@
 // LoginScreen.js
-import React , {useState}  from 'react';
+import React , {useEffect, useState}  from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet , Image,  Alert, useColorScheme} from 'react-native';
 import {getAuth , signInWithEmailAndPassword } from '@react-native-firebase/auth';
-
 
 
 const Login = ({navigation}) => {
 
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
+const [loading, setLoading] = useState(false);
 const colorScheme = useColorScheme();
 
 const placeholderTextColor= colorScheme === 'dark' ? '#ccc' : '#666';
+
+ useEffect( () => {
+  const checkUser = async () => {
+    const auth = getAuth();
+    const user = auth.currentUser;
+    if(user){
+      navigation.navigate("Home")
+    }
+  };
+  checkUser();
+ },[]);
+
+
+
   const handleLogin =  () => {
+    setLoading(true);
     const auth = getAuth();
      signInWithEmailAndPassword(auth , email, password).then((res)=>{
         console.log(res)
         Alert.alert("Logged in");
         const user = res.user;
+        setLoading(false);
         navigation.navigate("Home");
       })
      
@@ -25,7 +41,8 @@ const placeholderTextColor= colorScheme === 'dark' ? '#ccc' : '#666';
       console.log(error)
       Alert.alert("create your account first");
     })
-    }
+    setLoading(false);
+  }
   return (
     <View style={styles.container}>
        <View style={styles.logoContainer}>
@@ -67,7 +84,7 @@ bottom:0,
       />
       
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
-        <Text style={styles.buttonText}>Login</Text>
+        <Text style={styles.buttonText}>{loading?"Logging in ......":"Login"}</Text>
       </TouchableOpacity>
 
      <TouchableOpacity> 
@@ -105,7 +122,9 @@ paddingBottom:30,
 paddingTop:30,
 position:'absolute',
    top:0,
-   bottom:580,
+   bottom:680,
+   left:0,
+   right:0,
 },
 sl: {
   width:500,

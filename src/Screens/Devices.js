@@ -43,12 +43,27 @@ const App = () => {
           <View style={styles.deviceListHeader}>
             <Text style={styles.deviceListTitle}>My Devices</Text>
             <TouchableOpacity style={styles.addDeviceButton}>
-              <Icon name="plus-circle" size={16} color="green" />
+              {/* <Icon name="plus-circle" size={16} color="green" /> */}
+              <Image
+              source={require('../Images/Addp.png')}
+              style={styles.icon}/>
               <Text style={styles.addDeviceText}>Add new Device</Text>
             </TouchableOpacity>
           </View>
 
           {/* Device Cards */}
+          <Image source ={require('../Images/BinS.jpeg')}
+style ={{
+width:50,
+height :60,
+resizeMode : 'contain',
+position:'center',
+top:5,
+bottom:0,
+marginBottom:-60,
+}}
+/>
+<View>
           <DeviceCard
             deviceName="BinSmart"
             status="Filled"
@@ -57,6 +72,18 @@ const App = () => {
             isEnabled={isBinSmartEnabled}
             toggleSwitch={() => setBinSmartEnabled(!isBinSmartEnabled)}
           />
+        <Image source ={require('../Images/AquaN.jpeg')}
+style ={{
+width:50,
+height :60,
+resizeMode : 'contain',
+position:'center',
+top:5,
+bottom:0,
+marginBottom:-60,
+}}
+/>
+</View>
           <DeviceCard
             deviceName="AquaNurture"
             status="Moisture"
@@ -65,6 +92,17 @@ const App = () => {
             isEnabled={isAquaNurtureEnabled}
             toggleSwitch={() => setAquaNurtureEnabled(!isAquaNurtureEnabled)}
           />
+          <Image source ={require('../Images/AutoS.jpeg')}
+style ={{
+width:50,
+height :60,
+resizeMode : 'contain',
+position:'center',
+top:5,
+bottom:0,
+marginBottom:-60,
+}}
+/>
           <DeviceCard
             deviceName="AutoSort Bin"
             status="Segregation"
@@ -73,6 +111,17 @@ const App = () => {
             isEnabled={isAutoSortBinEnabled}
             toggleSwitch={() => setAutoSortBinEnabled(!isAutoSortBinEnabled)}
           />
+          <Image source ={require('../Images/FA.jpeg')}
+style ={{
+width:50,
+height :60,
+resizeMode : 'contain',
+position:'center',
+top:5,
+bottom:0,
+marginBottom:-60,
+}}
+/>
           <DeviceCard
             deviceName="FloodAlert"
             status="Water Level"
@@ -106,10 +155,16 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginTop: 10,
+    marginTop: 40,
+    color: 'black'
+  },
+  icon: {
+    height: 16,
+    width: 16,
+    borderRadius: 50,
   },
   deviceList: {
-    backgroundColor: '#e5e7eb',
+    backgroundColor: '#d9d9d9',
     margin: 20,
     borderRadius: 10,
     padding: 10,
@@ -123,6 +178,7 @@ const styles = StyleSheet.create({
   deviceListTitle: {
     fontSize: 18,
     fontWeight: 'bold',
+    color: 'black'
   },
   addDeviceButton: {
     flexDirection: 'row',

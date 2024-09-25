@@ -20,7 +20,7 @@ const ServiceScreen = () => {
       {/* Image Banner */}
       <View style={styles.banner}>
         <Image
-          source={{ uri: 'https://placehold.co/600x200' }}
+          source={require('../Images/S1.png')}
           style={styles.bannerImage}
         />
         <View style={styles.bannerOverlay}>
@@ -37,14 +37,30 @@ const ServiceScreen = () => {
         />
       </View>
 
-      {/* Icon Grid */}
       <View style={styles.iconGrid}>
-        {renderGridItem('restroom', 'Toilets', 'Toilets')}
-        {renderGridItem('trash', 'Dustbins', 'Dustbins')}
-        {renderGridItem('exchange', 'Exchange Point', 'ExchangePoint')}
-        {renderGridItem('apple', 'Food Waste', 'FoodWaste')}
-        {renderGridItem('store', 'Vendors', 'Vendors')}
-      </View>
+  <TouchableOpacity onPress={() => navigation.navigate('Toilets')}>
+    <Image source={require('../Images/Toilets.jpeg')} style={styles.iconCircle} />
+    <Text style={styles.iconText}>Toilets</Text>
+  </TouchableOpacity>
+  <TouchableOpacity onPress={() => navigation.navigate('Dustbins')}>
+    <Image source={require('../Images/Dustbins.jpeg')} style={styles.iconCircle} />
+    <Text style={styles.iconText}>Dustbins</Text>
+  </TouchableOpacity>
+  <TouchableOpacity onPress={() => navigation.navigate('ExchangePoint')}>
+    <Image source={require('../Images/Ep.jpeg')} style={styles.iconCircle} />
+    <Text style={styles.iconText}>Exchange</Text>
+    <Text style={styles.icon}>Point</Text>
+  </TouchableOpacity>
+  <TouchableOpacity onPress={() => navigation.navigate('FoodWaste')}>
+    <Image source={require('../Images/Fw.jpeg')} style={styles.iconCircle} />
+    <Text style={styles.iconText}>Food </Text>
+    <Text style={styles.icon}>Waste </Text>
+  </TouchableOpacity>
+  <TouchableOpacity onPress={() => navigation.navigate('Vendors')}>
+    <Image source={require('../Images/Vendors.jpeg')} style={styles.iconCircle} />
+    <Text style={styles.iconText}>Vendors</Text>
+  </TouchableOpacity>
+</View>
 
       {/* Arrow Icon */}
       <View style={styles.arrowDown}>
@@ -130,8 +146,8 @@ const styles = StyleSheet.create({
   iconGrid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-around',
-    marginHorizontal: 16,
+    justifyContent: 'space-between',
+    marginHorizontal: 20,
     marginTop: 20,
   },
   gridItem: {
@@ -141,11 +157,32 @@ const styles = StyleSheet.create({
   iconCircle: {
     backgroundColor: '#4CAF50',
     borderRadius: 50,
-    width: 64,
+    width: 60,
     height: 64,
     justifyContent: 'center',
     alignItems: 'center',
+    padding:0,
+    marginRight:5,
   },
+ iconText: {
+  
+    marginTop: 8,
+    fontSize: 13,
+    color: '#333',
+    paddingLeft:5,
+    paddingRight:5,
+    marginRight:0,
+  },
+  icon: {
+  
+    marginTop: 0,
+    fontSize: 13,
+    color: '#333',
+    paddingLeft:5,
+    paddingRight:5,
+    marginRight:2,
+  },
+  
   gridLabel: {
     marginTop: 8,
     fontSize: 14,

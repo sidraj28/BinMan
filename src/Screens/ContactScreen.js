@@ -7,7 +7,10 @@ const ContactScreen = ({ navigation }) => {
     <ScrollView style={styles.container}>
       <View style={styles.imageContainer}>
         {/* This is a placeholder for the image */}
-        <Text style={styles.imagePlaceholder}>[Your Image Here]</Text>
+        <Image 
+          source={require('../Images/C1.png')} // Replace with your phone icon path
+          
+          />
       </View>
       <View style={styles.contact}>
 
@@ -16,7 +19,7 @@ const ContactScreen = ({ navigation }) => {
        <View style={styles.ccontainer}>
          <View style={styles.iconContainer}>
           <Image 
-          source={require('../Images/telephone.png')} // Replace with your phone icon path
+          source={require('../Images/Phn.png')} // Replace with your phone icon path
           style={styles.icon}
           />
        </View>
@@ -28,7 +31,7 @@ const ContactScreen = ({ navigation }) => {
       <View style={styles.ccontainer}>
       <View style={styles.iconContainer}>
         <Image 
-          source={require('../Images/mail.png')} // Replace with your phone icon path
+          source={require('../Images/maili.png')} // Replace with your phone icon path
           style={styles.icon}
         />
       </View>
@@ -43,7 +46,7 @@ const ContactScreen = ({ navigation }) => {
         <View style={styles.ccontainer}>
         <View style={styles.iconContainer}>
         <Image 
-          source={require('../Images/mail.png')} // Replace with your phone icon path
+          source={require('../Images/insta.jpeg')} // Replace with your phone icon path
           style={styles.icon}
         />
       </View>
@@ -59,7 +62,7 @@ const ContactScreen = ({ navigation }) => {
         <View style={styles.ccontainer}>
         <View style={styles.iconContainer}>
         <Image 
-          source={require('../Images/instagram.jpg')} // Replace with your phone icon path
+          source={require('../Images/Whatsapp.png')} // Replace with your phone icon path
           style={styles.icon}
         />
       </View>
@@ -75,7 +78,7 @@ const ContactScreen = ({ navigation }) => {
         <View style={styles.ccontainer}>
         <View style={styles.iconContainer}>
         <Image 
-          source={require('../Images/whatsapp.jpg')} // Replace with your phone icon path
+          source={require('../Images/Linkedin.png')} // Replace with your phone icon path
           style={styles.icon}
         />
       </View>
@@ -119,6 +122,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#e0e0e0',
     justifyContent: 'center',
     alignItems: 'center',
+    paddingBottom: 170,
+    marginTop: 100
   },
   imagePlaceholder: {
     fontSize: 18,
@@ -137,12 +142,12 @@ const styles = StyleSheet.create({
     width:300,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius:20,
+    borderRadius:30,
     backgroundColor:'white',
     marginLeft:40,
     marginRight:20,
     position:'relative',
-    bottom:20,
+    bottom:28,
     marginBottom:30,
 
   },
@@ -179,7 +184,7 @@ const styles = StyleSheet.create({
     icon: {
       width: 40,
       height: 40,
-      tintColor: 'white', // Optional, if you want the icon to have a white tint
+      // tintColor: 'white', // Optional, if you want the icon to have a white tint
     },
     textContainer: {
       marginLeft: 10,

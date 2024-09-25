@@ -1,17 +1,34 @@
+import { getAuth, signOut } from '@react-native-firebase/auth';
 import React, { useState } from 'react';
-import { View, Text, Image, ScrollView, StyleSheet, Switch } from 'react-native';
+import { View, Text, Image, ScrollView, StyleSheet, Switch, TouchableOpacity, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const Profile = () => {
+const Profile = ({navigation}) => {
   const [emailNotifications, setEmailNotifications] = useState(false);
+
+  const handleLogout = async () => {
+    try{
+      const auth = getAuth();
+      await signOut(auth);
+      Alert.alert('Logged Out','You have been logged out successfully');
+      navigation.navigate('Login');
+    }
+    catch(error){
+      Alert.alert('Logout Error',error.message);
+    }
+  }
+
 
   return (
     <View style={styles.container}>
+
+      
+
       <ScrollView contentContainerStyle={styles.content}>
         {/* Profile Picture and Info */}
         <View style={styles.profileContainer}>
           <Image 
-            source={{ uri: 'https://placehold.co/100x100' }} 
+           source={require('../Images/P1.png')}
             style={styles.profileImage} 
           />
           <View style={styles.profileTextContainer}>
@@ -19,7 +36,11 @@ const Profile = () => {
             <Text style={styles.profileRole}>User</Text>
             <Text style={styles.profileLocation}>Jhansi</Text>
           </View>
-          <Icon name="edit" size={24} color="#4CAF50" />
+          
+          <Image 
+           source={require('../Images/Edit.png')} 
+           style={styles.editB} 
+          />
         </View>
 
         {/* Profile Bio */}
@@ -33,7 +54,10 @@ const Profile = () => {
             <Text style={styles.sectionTitle}>My Posts</Text>
             <View style={styles.addPostContainer}>
               <Text style={styles.addPostText}>Add new post</Text>
-              <Icon name="plus" size={16} color="#4CAF50" />
+              {/* <Icon name="plus" size={16} color="#4CAF50" /> */}
+              <Image
+              source={require('../Images/Addp.png')}
+              style={styles.icon}/>
             </View>
           </View>
           <View style={styles.postsContainer}>
@@ -53,16 +77,17 @@ const Profile = () => {
           <Switch 
             value={emailNotifications} 
             onValueChange={setEmailNotifications} 
-            trackColor={{ false: '#ccc', true: '#4CAF50' }} 
+            trackColor={{ false: 'grey', true: '#4CAF50' }} 
             thumbColor={emailNotifications ? '#fff' : '#fff'}
           />
         </View>
 
         {/* Logout */}
-        <View style={styles.toggleContainer}>
-          <Text style={styles.toggleText}>Logout</Text>
-          <Icon name="sync-alt" size={20} color="#4CAF50" />
-        </View>
+        <TouchableOpacity onPress={handleLogout} style={styles.toggleContainer}>
+            <Text style={styles.toggleText}>Logout</Text>
+            <Icon name="sync-alt" size={20} color="#4CAF50" />
+        </TouchableOpacity>
+
       </ScrollView>
 
       {/* Bottom Navigation */}
@@ -82,6 +107,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+  },
+  editB: {
+    height: 24,
+    width: 24,
   },
   content: {
     paddingBottom: 80, // Space for bottom navigation
@@ -103,19 +132,21 @@ const styles = StyleSheet.create({
   profileName: {
     fontSize: 20,
     fontWeight: 'bold',
+    color: 'black',
   },
   profileRole: {
     color: '#666',
   },
   profileLocation: {
-    color: '#666',
+    color: 'black',
+
   },
   bio: {
     textAlign: 'center',
     marginHorizontal: 20,
     marginVertical: 20,
     fontSize: 16,
-    color: '#333',
+    color: 'black',
   },
   section: {
     marginHorizontal: 20,
@@ -129,14 +160,22 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 18,
     fontWeight: 'bold',
+    color: 'black',
   },
   addPostContainer: {
     flexDirection: 'row',
     alignItems: 'center',
+    
   },
   addPostText: {
     color: '#4CAF50',
     marginRight: 5,
+    color: 'black',
+    fontWeight: 'bold',
+  },
+  icon: {
+    height: 16,
+    width: 16,
   },
   postsContainer: {
     flexDirection: 'row',
